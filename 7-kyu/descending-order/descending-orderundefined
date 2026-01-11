@@ -1,0 +1,35 @@
+#include <cinttypes>
+​
+uint64_t descendingOrder(uint64_t a)
+{
+  uint64_t arry [50];
+  uint64_t i=0 , n , j,t;
+  while(a>0){
+    n  = a%10;
+    arry[i] = n;
+    i++;
+    a = a/10;
+  }
+  n=i;
+  
+  for(i = 0;i<n;i++){
+    for(j=0;j<n-i-1;j++){
+      if(arry[j]<arry[j+1]){
+        t = arry[j];
+        arry[j]=arry[j+1];
+        arry[j+1] = t;
+      }
+    }
+  }
+  i =0;
+  j=0;
+  while(i<n){
+    t = arry[i];
+    j = j*10 + t;
+    i++;
+  }
+ 
+    
+  return j;
+  
+}
