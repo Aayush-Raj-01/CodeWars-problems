@@ -1,0 +1,17 @@
+bool is_square(int n)
+{
+  if(n<0) return false;
+  if(n==0) return true;
+  int i=0;
+  float g,gg;
+  gg=n;
+  while(true){
+    i++;
+    g=gg/(i*i);
+    if(g==1){
+      break;
+    }
+    if(i==n) break;
+  }
+  return (g==1) ? true : false;
+}
