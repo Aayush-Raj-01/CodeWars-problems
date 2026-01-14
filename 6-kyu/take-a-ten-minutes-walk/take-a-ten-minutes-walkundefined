@@ -1,0 +1,42 @@
+#include<vector>
+#include <algorithm>
+​
+bool isValidWalk(std::vector<char> walk) {
+  if(walk.size()!=10) return false;
+  int posi;
+  std::vector<char>::iterator it;
+  for(int i = 0; i<=10;i++){
+    if(walk[i]=='n'){
+    if((it=find(begin(walk),end(walk),'s'))!= end(walk)){
+      posi = distance(begin(walk),it);
+      walk[i]=0;
+      walk[posi]=0;
+    }
+  }
+    if(walk[i]=='s'){
+    if((it=find(begin(walk),end(walk),'n'))!= end(walk)){
+      posi = distance(begin(walk),it);
+      walk[i]=0;
+      walk[posi]=0;
+    }
+ }
+    if(walk[i]=='w'){
+    if((it=find(begin(walk),end(walk),'e'))!= end(walk)){
+      posi = distance(begin(walk),it);
+      walk[i]=0;
+      walk[posi]=0;
+    }
+}
+    if(walk[i]=='e'){
+    if((it=find(begin(walk),end(walk),'w'))!= end(walk)){
+      posi = distance(begin(walk),it);
+      walk[i]=0;
+      walk[posi]=0;
+    }
+      }
+    }
+  for(int i =0;i<=10;i++){
+    if(walk[i]!= 0) return false;
+  }
+  return true;
+  }
