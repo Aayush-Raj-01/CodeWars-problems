@@ -1,0 +1,29 @@
+using namespace std;
+std::string pig_it(std::string str)
+{
+    string t="";
+  string ans = "";
+  for(int i=0;i<= str.length(); i++)
+    if(i==0){
+      t = str[0];
+    }
+  else if(str[i]==' '||str[i]=='\0'){
+    if((str[i-1] >= 'A' && str[i-1] <= 'Z') || (str[i-1] >= 'a' && str[i-1] <= 'z')){
+    ans += t + "ay";
+  }
+  else{
+    ans += t;
+  }
+    }
+  else if(str[i-1]==' ') {
+    
+    t = str[i];
+    ans += " ";
+    
+  }
+  else{
+    ans += str[i];
+  }
+  
+  return ans;
+}
