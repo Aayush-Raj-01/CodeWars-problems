@@ -1,0 +1,13 @@
+class Arge
+{
+  public:
+  static int nbYear(int p0, double percent, int aug, int p){
+    int o=0,i=0;
+    while(true){
+      i++;
+      p0 = p0 + (p0*(percent/100)) + aug;
+      if(p<=p0) break ;
+    }
+    return i;
+  }
+};
