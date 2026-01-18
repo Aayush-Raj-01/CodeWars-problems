@@ -1,0 +1,23 @@
+#include <string>
+std::string factorial(int factorial){
+  std::string ans = "1";
+  std::string res = "1";
+  for(int i =1;i<=factorial;i++){
+    std::string num2 = std::to_string(i);
+    std::string res((ans.length()) + (num2.size()), '0');
+    for(int j = ans.length()-1 ; j>=0;j--){
+      for(int k = num2.size()-1;k>=0;k--){
+        int pro = (ans[j]-'0')*(num2[k]-'0');
+        int sum = pro + (res[j+k+1]-'0');
+        res[k+j+1]= sum %10 + '0';
+        res[j+k] += sum/10;
+        
+      }
+    }
+     size_t start = res.find_first_not_of('0');
+    ans = res.substr(start);
+    res = "1";
+    
+  }
+return ans;
+}
