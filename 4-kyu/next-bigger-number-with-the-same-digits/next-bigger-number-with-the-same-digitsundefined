@@ -1,0 +1,7 @@
+long nextBigger(long n) {
+  std::string s = std::to_string(n);
+  if(next_permutation(s.begin(),s.end())){
+return stoul(s);
+  }
+  return -1;
+}
