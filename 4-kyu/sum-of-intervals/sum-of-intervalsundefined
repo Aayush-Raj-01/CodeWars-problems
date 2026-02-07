@@ -1,0 +1,22 @@
+#include <vector>
+#include <utility>
+​
+int sum_intervals(std::vector<std::pair<int, int>> nums) {
+  int sum = 0;
+  std::sort(nums.begin(), nums.end());
+      int c_start = nums[0].first;
+      int c_end = nums[0].second;
+  for(int i =1;i<nums.size();i++){
+    if(nums[i].first <= c_end){
+      c_end = std::max(c_end,nums[i].second);
+    }
+    else{
+      sum += c_end - c_start;
+      c_start = nums[i].first;
+      c_end = nums[i].second;
+    }
+    
+  }
+    sum += c_end -c_start;
+  return sum;
+}
